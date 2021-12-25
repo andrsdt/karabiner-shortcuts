@@ -711,7 +711,7 @@
                         ]
                     },
                     {
-                        "description": "Cmd + BS/Del Keys to Option + BS/Del Keys",
+                        "description": "Cmd + Backspace to Option + Backspace",
                         "manipulators": [
                             {
                                 "from": {
@@ -721,19 +721,30 @@
                                             "left_command"
                                         ],
                                         "optional": [
-                                            "capslock"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
                                 "to": [
                                     {
-                                        "key_code": "delete_or_backspace",
+                                        "key_code": "left_arrow",
+                                        "modifiers": [
+                                            "option"
+                                        ]
+                                    },
+                                    {
+                                        "key_code": "delete_forward",
                                         "modifiers": [
                                             "option"
                                         ]
                                     }
                                 ]
-                            },
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Hyper + Cmd + Backspace to Option + Delete",
+                        "manipulators": [
                             {
                                 "from": {
                                     "key_code": "delete_or_backspace",
@@ -746,19 +757,17 @@
                                             "left_command"
                                         ],
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "delete_forward",
-                                        "modifiers": [
-                                            "option"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
+                                "to": {
+                                    "key_code": "delete_forward",
+                                    "modifiers": [
+                                        "option"
+                                    ],
+                                    "repeat": true
+                                }
                             }
                         ]
                     },
@@ -795,33 +804,6 @@
                         ]
                     },
                     {
-                        "description": "Hyper + Tab : Caps Lock",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "tab",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "right_shift",
-                                            "right_command",
-                                            "right_control",
-                                            "right_option"
-                                        ],
-                                        "optional": [
-                                            "caps_lock"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "caps_lock"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Hyper + SPACE : Toggle Spotlight/Alfred",
                         "manipulators": [
                             {
@@ -842,6 +824,68 @@
                                 "to": [
                                     {
                                         "key_code": "spacebar",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Hyper + command + C : File start",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "c",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_shift",
+                                            "right_command",
+                                            "right_control",
+                                            "right_option",
+                                            "left_command"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "up_arrow",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Hyper + command + V : File end",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "v",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_shift",
+                                            "right_command",
+                                            "right_control",
+                                            "right_option",
+                                            "left_command"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "down_arrow",
                                         "modifiers": [
                                             "left_command"
                                         ]
@@ -926,65 +970,6 @@
                                 "to": [
                                     {
                                         "key_code": "delete_forward"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Hyper + command + C : File start",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "v",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "right_shift",
-                                            "right_command",
-                                            "right_control",
-                                            "right_option",
-                                            "left_command"
-                                        ],
-                                        "optional": [
-                                            "caps_lock"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "up_arrow",
-                                        "modifiers": [
-                                            "left_command"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Hyper + command + V : File end",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "v",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "right_shift",
-                                            "right_command",
-                                            "right_control",
-                                            "right_option",
-                                            "left_command"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "end",
-                                        "modifiers": [
-                                            "left_command"
-                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -1098,7 +1083,7 @@
                                             "right_option"
                                         ],
                                         "optional": [
-                                            "any"
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -1123,6 +1108,9 @@
                                             "right_command",
                                             "right_control",
                                             "right_option"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -1142,6 +1130,9 @@
                                             "right_command",
                                             "right_control",
                                             "right_option"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -1166,6 +1157,9 @@
                                             "right_command",
                                             "right_control",
                                             "right_option"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -1209,6 +1203,9 @@
                                             "right_command",
                                             "right_control",
                                             "right_option"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -1222,23 +1219,55 @@
                         ]
                     },
                     {
-                        "description": "Hyper + F to split left",
+                        "description": "Hyper + command + Q/E to next/previous desktops",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "r",
+                                    "key_code": "q",
                                     "modifiers": {
                                         "mandatory": [
                                             "right_shift",
                                             "right_command",
                                             "right_control",
-                                            "right_option"
+                                            "right_option",
+                                            "left_command"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
                                         ]
                                     }
                                 },
                                 "to": [
                                     {
-                                        "key_code": " mute"
+                                        "key_code": "left_arrow",
+                                        "modifiers": [
+                                            "left_control"
+                                        ],
+                                        "repeat": true
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "e",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_shift",
+                                            "right_command",
+                                            "right_control",
+                                            "right_option",
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "left_control"
+                                        ],
+                                        "repeat": true
                                     }
                                 ],
                                 "type": "basic"
@@ -1254,6 +1283,9 @@
                                     "modifiers": {
                                         "mandatory": [
                                             "right_command"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
                                         ]
                                     }
                                 },
@@ -1285,63 +1317,15 @@
                                             "right_command",
                                             "right_control",
                                             "right_option"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
                                         ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "mission_control"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Hyper + command + Q/E to next/previous desktops",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "q",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "right_shift",
-                                            "right_command",
-                                            "right_control",
-                                            "right_option",
-                                            "left_command"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_arrow",
-                                        "modifiers": [
-                                            "left_control"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "e",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "right_shift",
-                                            "right_command",
-                                            "right_control",
-                                            "right_option",
-                                            "left_command"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "right_arrow",
-                                        "modifiers": [
-                                            "left_control"
-                                        ]
                                     }
                                 ],
                                 "type": "basic"
