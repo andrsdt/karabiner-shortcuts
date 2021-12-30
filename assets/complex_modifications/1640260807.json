@@ -508,6 +508,27 @@
           "type": "basic"
         }
       ]
+    },
+    {
+      "description": "< > to drag windows",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "non_us_backslash",
+            "modifiers": {
+              "mandatory": [],
+              "optional": ["caps_lock"]
+            }
+          },
+          "to": [
+            {
+              "pointing_button": "button1",
+              "modifiers": ["left_control", "left_command"]
+            }
+          ],
+          "type": "basic"
+        }
+      ]
     }
   ]
 }
