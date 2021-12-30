@@ -311,7 +311,7 @@
           },
           "to": [
             {
-              "key_code": "rewind"
+              "consumer_key_code": "rewind"
             }
           ],
           "type": "basic"
@@ -331,7 +331,7 @@
           },
           "to": [
             {
-              "key_code": "fast_forward"
+              "consumer_key_code": "fast_forward"
             }
           ],
           "type": "basic"
